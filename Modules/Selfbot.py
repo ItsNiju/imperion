@@ -70,7 +70,7 @@ async def on_ready():
 {dblue}                             ╔═════════════════════════════╦════════════════════════════╗
 {dblue}                             ║ {gray}[{green}${gray}] {white}(add/sub/mul/div)       {dblue}║ {gray}[{green}${gray}] {white}destruct               {dblue}║
 {dblue}                             ║ {gray}[{green}${gray}] {white}utc                     {dblue}║ {gray}[{green}${gray}] {white}clone                  {dblue}║
-{dblue}                             ║ {gray}[{green}${gray}] {white}nick                    {dblue}║ {gray}[{green}${gray}] {white}ok                     {dblue}║
+{dblue}                             ║ {gray}[{green}${gray}] {white}nick                    {dblue}║ {gray}[{green}${gray}] {white}cmds                   {dblue}║
 {dblue}                             ╚═════════════════════════════╩════════════════════════════╝
 """)
     print(f"""{green}     - Logged in as {blue}""" + client.user.name + f"""#""" + client.user.discriminator)
@@ -143,5 +143,27 @@ async def nick(ctx, *, txt=None):
         embed = Embed(description='Changed nickname to: `%s`' % txt, color=0x00F1BA)
         await ctx.send(embed=embed)
 
+@client.command()
+async def clear(ctx):
+    await ctx.message.delete()
+    os.system('cls' if os.name == 'nt' else 'clear')
+    title("[imperion] Selfbot")
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+    print(f"""
+{red}                                                                            
+{red}                                         _                        _           
+{red}                                        <_>._ _ _  ___  ___  _ _ <_> ___ ._ _ 
+{red}                                        | || ' ' || . \/ ._>| '_>| |/ . \| ' |
+{red}                                        |_||_|_|_||  _/\___.|_|  |_|\___/|_|_|
+{red}                                                  |_|          {gray}           By Niju                         
+{red}                                       
+{red}                                                         
+{dblue}                             ╔═════════════════════════════╦════════════════════════════╗
+{dblue}                             ║ {gray}[{green}${gray}] {white}(add/sub/mul/div)       {dblue}║ {gray}[{green}${gray}] {white}destruct               {dblue}║
+{dblue}                             ║ {gray}[{green}${gray}] {white}utc                     {dblue}║ {gray}[{green}${gray}] {white}clone                  {dblue}║
+{dblue}                             ║ {gray}[{green}${gray}] {white}nick                    {dblue}║ {gray}[{green}${gray}] {white}cmds                   {dblue}║
+{dblue}                             ╚═════════════════════════════╩════════════════════════════╝
+""")
+    print(f"""{green}     - Logged in as {blue}""" + client.user.name + f"""#""" + client.user.discriminator)   
 
 client.run(token, bot=False)
