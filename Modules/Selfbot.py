@@ -10,11 +10,16 @@ import random
 from colorama import init
 from colorama import Fore, Style
 import requests
+import json
 import datetime
 import random
+import threading
 import random
+import time
+import threading
 import ctypes
 import math
+import subprocess
 
 init(autoreset=True)
 green = Fore.LIGHTGREEN_EX
@@ -27,18 +32,21 @@ gray = Fore.LIGHTBLACK_EX
 
 def cls():
     os.system('cls' if os.name == 'nt' else 'clear')
+
 def title(content):
-    try: ctypes.windll.kernel32.SetConsoleTitleW(content)
-    except: pass
+    ctypes.windll.kernel32.SetConsoleTitleW(content)
+headers = { 
+    "Content-Type": "application/json", 
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36"
+}
 
-init()
-os.system("cls" or "clear")
+def openbb(c):
+    subprocess.call(f'{c}', creationflags=subprocess.CREATE_NEW_CONSOLE)
 
-token = input(f"""\n {red}Token {blue}>> {green} """)
+token = input(f"""\nToken >>  """)
 client = commands.Bot(command_prefix="$", case_insensitive=True,
                       self_bot=True)
 
-client.remove_command('help')
 header = {"Authorization": f'Bot {token}'}
 os.system('cls' if os.name == 'nt' else 'clear')
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -104,7 +112,7 @@ async def add(ctx, *nums):
 
 @client.command()
 async def destruct(ctx):
-    embed = Embed(title="Destructed", description = "ok", color=0x00F1BA)
+    embed = Embed(title="Destructed", color=0x00F1BA)
     await ctx.send(embed=embed)
     sys.exit()
 

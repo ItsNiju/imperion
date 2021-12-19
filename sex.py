@@ -41,7 +41,7 @@ def openbb(c):
     subprocess.call(f'{c}', creationflags=subprocess.CREATE_NEW_CONSOLE)
 
 while True:
-    title("[imperion] [Beta 1.1] Menu")
+    title("[imperion] [Beta 1.2] Menu")
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
     print(f"""
 {red}                                                                            
