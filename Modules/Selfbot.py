@@ -70,6 +70,7 @@ async def on_ready():
 {dblue}                             ╔═════════════════════════════╦════════════════════════════╗
 {dblue}                             ║ {gray}[{green}${gray}] {white}(add/sub/mul/div)       {dblue}║ {gray}[{green}${gray}] {white}destruct               {dblue}║
 {dblue}                             ║ {gray}[{green}${gray}] {white}utc                     {dblue}║ {gray}[{green}${gray}] {white}clone                  {dblue}║
+{dblue}                             ║ {gray}[{green}${gray}] {white}nick                    {dblue}║ {gray}[{green}${gray}] {white}ok                     {dblue}║
 {dblue}                             ╚═════════════════════════════╩════════════════════════════╝
 """)
     print(f"""{green}     - Logged in as {blue}""" + client.user.name + f"""#""" + client.user.discriminator)
@@ -130,9 +131,17 @@ async def div(ctx, *nums):
 
 @client.command()
 async def destruct(ctx):
+    await ctx.message.delete()
     embed = Embed(title="Destructed", color=0x00F1BA)
     await ctx.send(embed=embed)
     sys.exit()
+
+@client.command()
+async def nick(ctx, *, txt=None):
+        await ctx.message.delete()
+        await ctx.message.author.edit(nick=txt)
+        embed = Embed(description='Changed nickname to: `%s`' % txt, color=0x00F1BA)
+        await ctx.send(embed=embed)
 
 
 client.run(token, bot=False)
