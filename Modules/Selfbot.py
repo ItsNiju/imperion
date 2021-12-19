@@ -10,14 +10,11 @@ import random
 from colorama import init
 from colorama import Fore, Style
 import requests
-import json
 import datetime
 import random
-import threading
 import random
-import time
-import threading
 import ctypes
+import math
 
 init(autoreset=True)
 green = Fore.LIGHTGREEN_EX
@@ -110,6 +107,5 @@ async def destruct(ctx):
     embed = Embed(title="Destructed", description = "ok", color=0x00F1BA)
     await ctx.send(embed=embed)
     sys.exit()
-
 
 client.run(token, bot=False)
