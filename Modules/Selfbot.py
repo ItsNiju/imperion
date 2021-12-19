@@ -111,9 +111,28 @@ async def add(ctx, *nums):
     await ctx.send(embed=embed)
 
 @client.command()
+async def sub(ctx, *nums):
+    operation = " - ".join(nums)
+    embed = Embed(title="subtraction result", description = f'{eval(operation)}', color=0x00F1BA)
+    await ctx.send(embed=embed)
+
+@client.command()
+async def mul(ctx, *nums):
+    operation = " * ".join(nums)
+    embed = Embed(title="Multiplication result", description = f'{eval(operation)}', color=0x00F1BA)
+    await ctx.send(embed=embed)
+
+@client.command()
+async def div(ctx, *nums):
+    operation = " * ".join(nums)
+    embed = Embed(title="Divition result", description = f'{eval(operation)}', color=0x00F1BA)
+    await ctx.send(embed=embed)
+
+@client.command()
 async def destruct(ctx):
     embed = Embed(title="Destructed", color=0x00F1BA)
     await ctx.send(embed=embed)
     sys.exit()
+
 
 client.run(token, bot=False)
