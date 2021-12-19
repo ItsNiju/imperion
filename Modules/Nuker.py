@@ -36,4 +36,7 @@ print(f"""
 {red}                                       
 {red}                                                         
 """)
-print(f"{pink}>{red} Skidded From Chasa's BlueBot :hotface:")
+print(f"{pink}>{red} $nuke to nuke and $ban for massban")
+
+
+
