@@ -166,4 +166,9 @@ async def clear(ctx):
 """)
     print(f"""{green}     - Logged in as {blue}""" + client.user.name + f"""#""" + client.user.discriminator)   
 
+@client.command()
+async def cmds(ctx):
+    await ctx.message.delete()
+
+
 client.run(token, bot=False)
