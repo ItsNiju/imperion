@@ -160,7 +160,7 @@ async def clear(ctx):
 {red}                                                         
 {dblue}                             ╔═════════════════════════════╦════════════════════════════╗
 {dblue}                             ║ {gray}[{green}${gray}] {white}(add/sub/mul/div)       {dblue}║ {gray}[{green}${gray}] {white}destruct               {dblue}║
-{dblue}                             ║ {gray}[{green}${gray}] {white}utc                     {dblue}║ {gray}[{green}${gray}] {white}clone                  {dblue}║
+{dblue}                             ║ {gray}[{green}${gray}] {white}clear(clears console    {dblue}║ {gray}[{green}${gray}] {white}clone                  {dblue}║
 {dblue}                             ║ {gray}[{green}${gray}] {white}nick                    {dblue}║ {gray}[{green}${gray}] {white}cmds                   {dblue}║
 {dblue}                             ╚═════════════════════════════╩════════════════════════════╝
 """)
