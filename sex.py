@@ -41,7 +41,7 @@ def openbb(c):
     subprocess.call(f'{c}', creationflags=subprocess.CREATE_NEW_CONSOLE)
 
 while True:
-    title("[imperion] [Beta 1.2] Menu")
+    title("[imperion] [Beta 1.4] Menu")
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
     print(f"""
 {red}                                                                            
@@ -69,9 +69,9 @@ while True:
             print(f"                                                 {gray}[{yellow}/{gray}]{white} Loading Nuker...")
             time.sleep(0.7)
             try:
-             mydir = cwd + "\\Modules"
+             mydir = cwd + "\\Modules\\Nuker"
              mydir_new = os.chdir(mydir)
-             threading.Thread(target=openbb, args=(f'{cwd}\\Modules\\Nuker.exe',)).start()
+             threading.Thread(target=openbb, args=(f'{cwd}\\Modules\\Nuker\\Nuker.exe',)).start()
             except:
                 print(f"                                                {gray}[{red}!{gray}]{white} Error finding Module.")
         elif choice == 2:
