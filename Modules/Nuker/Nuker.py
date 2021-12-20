@@ -8,6 +8,7 @@ from colorama import Fore, init
 import yaml
 import time
 import random, sys
+import json
 init(autoreset=True)
 
 def cls():
@@ -19,7 +20,7 @@ def title(content):
 purp = Fore.MAGENTA 
 pink = Fore.LIGHTMAGENTA_EX 
 gray = Fore.LIGHTBLACK_EX 
-whit = Fore.WHITE 
+white = Fore.WHITE 
 red = Fore.RED 
 lred = Fore.LIGHTRED_EX 
 
@@ -37,3 +38,6 @@ print(f"""
 {red}                                                         
 """)
 print(f"{pink}>{red} $nuke to nuke and $ban for massban")
+global config, TOKEN, PREFIX, GUILD_NAME, CHANNEL_NAMES, ROLE_NAMES, SPAM_MESSAGES, AUDIT_LOG
+try:
+               
