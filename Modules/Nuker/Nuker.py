@@ -52,8 +52,8 @@ except Exception as e:
     file.write(r'''{ 
     "token" : "enter token here",
     "channel-names" : "ok,oky",
-    "role-names" : "get nuked ez,nuked ezzz",
-    "spam-messages" : "GET NUKED EZ - @everyone,@everyone ezzz",
+    "role-names" : "ok,ok again",
+    "spam-messages" : "@everyone,@everyone cope",
 }''')
     print(f"{lred}[+]{white} Created config.uwu.")
     print(f"{red}[!]{white} Add token to the config and reboot.")
