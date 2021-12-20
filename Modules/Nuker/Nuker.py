@@ -38,6 +38,27 @@ print(f"""
 {red}                                                         
 """)
 print(f"{pink}>{red} $nuke to nuke and $ban for massban")
+print(f"{pink}>{red} Skidded from chasa")
 global config, TOKEN, PREFIX, GUILD_NAME, CHANNEL_NAMES, ROLE_NAMES, SPAM_MESSAGES, AUDIT_LOG
 try:
-               
+    file = open('config.uwu', 'r+')
+    with open('config.uwu') as f:
+        config = file.readlines(f)
+    TOKEN = config["token"]
+    GUILD_NAME = config["change-name"]
+    CHANNEL_NAMES = config["channel-names"].split(",")
+    SPAM_MESSAGES = config["spam-messages"].split(",")
+except Exception as e:
+    print(f"{red}[!]{white} Couldn't load config.uwu. Creating now...     ")
+    file.write(r'''{ 
+    "comment" : "SEPERATE ITEMS WITH COMMAS",
+    "token" : "enter token here",
+    "change-name" : "NUKED",
+    "channel-names" : "nuked-ez,nuked-lol",
+    "role-names" : "get nuked ez,nuked ezzz",
+    "spam-messages" : "GET NUKED EZ - @everyone,@everyone ezzz",
+}''')
+    print(f"{lred}[+]{white} Created config.uwu.")
+    print(f"{red}[!]{white} Add token to the config and reboot.")
+    time.sleep(3)
+    sys.exit()                
