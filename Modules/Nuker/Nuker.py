@@ -45,16 +45,13 @@ try:
     with open('config.uwu') as f:
         config = file.readlines(f)
     TOKEN = config["token"]
-    GUILD_NAME = config["change-name"]
     CHANNEL_NAMES = config["channel-names"].split(",")
     SPAM_MESSAGES = config["spam-messages"].split(",")
 except Exception as e:
     print(f"{red}[!]{white} Couldn't load config.uwu. Creating now...     ")
     file.write(r'''{ 
-    "comment" : "SEPERATE ITEMS WITH COMMAS",
     "token" : "enter token here",
-    "change-name" : "NUKED",
-    "channel-names" : "nuked-ez,nuked-lol",
+    "channel-names" : "ok,oky",
     "role-names" : "get nuked ez,nuked ezzz",
     "spam-messages" : "GET NUKED EZ - @everyone,@everyone ezzz",
 }''')
