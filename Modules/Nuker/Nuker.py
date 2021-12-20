@@ -9,6 +9,7 @@ import yaml
 import time
 import random, sys
 import json
+import asyncio
 init(autoreset=True)
 
 def cls():
@@ -59,3 +60,8 @@ except Exception as e:
     print(f"{red}[!]{white} Add token to the config and reboot.")
     time.sleep(3)
     sys.exit()                
+
+bot = commands.Bot(command_prefix="$", case_insensitive=True, intents=all)
+
+
+
