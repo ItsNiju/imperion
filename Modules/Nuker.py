@@ -48,3 +48,14 @@ async def delete_all_channel(guild):
             continue
     return deleted
 
+async def delete_all_roles(guild):
+    deleted = 0
+    for role in guild.roles:
+        try:
+            await role.delete()
+            deleted += 1
+        except:
+            continue
+    return deleted
+
+
