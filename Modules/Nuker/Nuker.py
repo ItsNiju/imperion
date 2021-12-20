@@ -50,7 +50,7 @@ try:
 except Exception as e:
     print(f"{red}[!]{white} Couldn't load config.uwu. Creating now...     ")
     file.write(r'''{ 
-    "token" : "enter token here",
+    "token" : "token goes here",
     "channel-names" : "ok,oky",
     "role-names" : "ok,ok again",
     "spam-messages" : "@everyone,@everyone cope",
