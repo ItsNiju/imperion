@@ -170,5 +170,9 @@ async def clear(ctx):
 async def cmds(ctx):
     await ctx.message.delete()
 
+@client.command()
+async def define(ctx,*,txt=None):
+    await ctx
+
 
 client.run(token, bot=False)
