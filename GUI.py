@@ -18,8 +18,9 @@ gray = Fore.LIGHTBLACK_EX
 root = Tk()
 root.title("[imperion] [Beta 1.7] Menu")
 
-ok = Entry(root)
-ok.pack()
+webhook = Entry(root, width=50)
+webhook.pack()
+
 
 def myClick():
     requests.delete(webhook)
