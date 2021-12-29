@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 import discord
 import requests
 import time
@@ -17,7 +18,7 @@ gray = Fore.LIGHTBLACK_EX
 root = Tk()
 root.title("[imperion] [Beta 1.7] Menu")
 
-ok = Label(root, text="Hello!")
+ok = Entry(root)
 ok.pack()
 
 def myClick():

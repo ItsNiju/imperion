@@ -79,7 +79,7 @@ async def on_ready():
 @client.command()
 async def clone(ctx): 
     await ctx.message.delete()
-    wow = await client.create_guild(f'clone-of{ctx.guild.name}')
+    wow = await client.create_guild(f'clone-of-{ctx.guild.name}')
     await asyncio.sleep(4)
     for g in client.guilds:
         if f'clone-of{ctx.guild.name}' in g.name:
@@ -173,6 +173,10 @@ async def cmds(ctx):
 @client.command()
 async def define(ctx,*,txt=None):
     await ctx
+
+@client.command()
+async def vape(ctx):
+    await ctx.send("buy vape @ https://vape.gg/")
 
 
 client.run(token, bot=False)
