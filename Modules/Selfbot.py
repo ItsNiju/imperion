@@ -178,5 +178,16 @@ async def define(ctx,*,txt=None):
 async def vape(ctx):
     await ctx.send("buy vape @ https://vape.gg/")
 
+@client.command()
+async def gayrate(ctx):
+    
+
+@client.command()
+async def waifu(ctx):
+    r = requests.get('https://nekos.life/api/v2/img/waifu')
+    res = r.json()
+    em = discord.Embed()
+    em.set_image(url=(res['url']))
+    await ctx.send(embed=em)
 
 client.run(token, bot=False)
