@@ -178,9 +178,10 @@ async def define(ctx,*,txt=None):
 async def vape(ctx):
     await ctx.send("buy vape @ https://vape.gg/")
 
-@client.command()
-async def gayrate(ctx):
-    
+@commands.command()
+async def rate(self, ctx, *, thing: commands.clean_content):
+    rate_amount = random.uniform(0.0, 100.0)
+    await ctx.send(f"I'd rate `{thing}` a **{round(rate_amount, 4)} / 100**")
 
 @client.command()
 async def waifu(ctx):
@@ -188,6 +189,6 @@ async def waifu(ctx):
     res = r.json()
     em = discord.Embed()
     em.set_image(url=(res['url']))
-    await ctx.send(embed=em)
+    await ctx.send(embed=em, color=0x00F1BA)
 
 client.run(token, bot=False)
