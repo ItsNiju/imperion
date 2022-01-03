@@ -178,17 +178,20 @@ async def define(ctx,*,txt=None):
 async def vape(ctx):
     await ctx.send("buy vape @ https://vape.gg/")
 
-@commands.command()
-async def rate(self, ctx, *, thing: commands.clean_content):
-    rate_amount = random.uniform(0.0, 100.0)
-    await ctx.send(f"I'd rate `{thing}` a **{round(rate_amount, 4)} / 100**")
-
 @client.command()
 async def waifu(ctx):
     r = requests.get('https://nekos.life/api/v2/img/waifu')
     res = r.json()
-    em = discord.Embed()
+    em = discord.Embed(color=0x00F1BA)
     em.set_image(url=(res['url']))
-    await ctx.send(embed=em, color=0x00F1BA)
+    await ctx.send(embed=em)
+
+@client.command()
+async def lewd(ctx):
+    r = requests.get('https://nekos.life/api/v2/img/lewd')
+    res = r.json()
+    em = discord.Embed(color=0x00F1BA)
+    em.set_image(url=(res['url']))
+    await ctx.send(embed=em)
 
 client.run(token, bot=False)
