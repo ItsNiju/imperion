@@ -171,10 +171,6 @@ async def cmds(ctx):
     await ctx.message.delete()
 
 @client.command()
-async def define(ctx,*,txt=None):
-    await ctx
-
-@client.command()
 async def vape(ctx):
     await ctx.send("buy vape @ https://vape.gg/")
 
