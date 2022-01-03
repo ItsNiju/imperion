@@ -182,7 +182,7 @@ async def waifu(ctx):
     em.set_image(url=(res['url']))
     await ctx.send(embed=em)
 
-@client.command()
+@client.command(aliases=['sauce'])
 async def lewd(ctx):
     r = requests.get('https://nekos.life/api/v2/img/lewd')
     res = r.json()
