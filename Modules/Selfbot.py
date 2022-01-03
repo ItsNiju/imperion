@@ -190,4 +190,26 @@ async def lewd(ctx):
     em.set_image(url=(res['url']))
     await ctx.send(embed=em)
 
+@client.command()
+async def watch(ctx, *, text):
+    await ctx.message.delete()
+    await client.change_presence(activity=discord.Activity(type=(discord.ActivityType.watching), name=text))
+    embed = discord.Embed(description=f"**{ctx.author.mention}, Is now Watching {text}**", color=0x00F1BA)
+    await ctx.send(embed=embed)
+
+
+@client.command()
+async def play(ctx, *, text):
+    await ctx.message.delete()
+    await client.change_presence(activity=discord.Game(name=text))
+    embed = discord.Embed(description=f"**{ctx.author.mention}, Is now Playing {text}**", color=0x00F1BA)
+    await ctx.send(embed=embed)    
+
+@client.command()
+async def stop(ctx):
+    await ctx.message.delete()
+    await client.change_presence(activity=None)
+    embed = discord.Embed(description=f"**{ctx.author.mention}'s Status Has Reset**", color=0x00F1BA)
+    await ctx.send(embed=embed)
+
 client.run(token, bot=False)
