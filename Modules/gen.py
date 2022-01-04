@@ -16,16 +16,14 @@ ree = str(ran)
 def ok():
     driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.get("http://discord.com/register")
-    time.sleep(4)
     element = driver.find_element_by_name("email")
     element.send_keys("urmum@hotmilfsinyourarea.com");
-    time.sleep(1)
     element = driver.find_element_by_name("username")
     element.send_keys(ree);
-    time.sleep(1)
     element = driver.find_element_by_name("password")
     element.send_keys(ree);
-    time.sleep(8)
+    driver.find_element_by_class_name("css-1hwfws3").click()
+    time.sleep(100)
     cope = driver.find_element_by_class_name('contents-18-Yxp').click()
     time.sleep(1)
     sys.exit()
