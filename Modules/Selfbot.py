@@ -211,5 +211,6 @@ async def stop(ctx):
     await client.change_presence(activity=None)
     embed = discord.Embed(description=f"**{ctx.author.mention}'s Status Has Reset**", color=0x00F1BA)
     await ctx.send(embed=embed)
+    
 
 client.run(token, bot=False)

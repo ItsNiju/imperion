@@ -23,6 +23,7 @@ def ok():
     element = driver.find_element_by_name("password")
     element.send_keys(ree);
     driver.find_element_by_class_name("css-1hwfws3").click()
+    driver.find_element_by_class_name("").click
     time.sleep(100)
     cope = driver.find_element_by_class_name('contents-18-Yxp').click()
     time.sleep(1)
